@@ -11,7 +11,8 @@
 /** DO NOT CHANGE THE FUNCTION NAME **/
 const flatten = (arr) => {
     /* Only make changes below this comment */
-    
+    return arr.reduce((accumulator, value) => 
+        Array.isArray(value) ? accumulator.concat(flatten(value)) : accumulator.concat(value), []);
     /* Only make changes below this comment */
 }
 
