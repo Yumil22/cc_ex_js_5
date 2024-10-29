@@ -11,7 +11,14 @@
 /** DO NOT CHANGE THE FUNCTION NAME **/
 const flatten = (arr) => {
     /* Only make changes below this comment */
-    
+    return arr.reduce((acc, curr) => {
+        if (Array.isArray(curr)) {
+            acc.push(...flatten(curr));
+        } else {
+            acc.push(curr);
+        }
+        return acc;
+    }, []);
     /* Only make changes below this comment */
 }
 
